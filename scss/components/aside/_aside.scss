@@ -1,0 +1,106 @@
+@import '../../cta';
+@import '../../mixins';
+
+.catalog__left {
+    width: 28.8rem;
+    margin-left: 17rem;
+
+    position: absolute;
+    top: 107rem;
+
+    @include respond-to('phone'){
+        display: none;
+    }
+
+    .left-title {
+        @include flex-row();
+        color: $color-navy-blue;
+        font-weight: 800;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        font-size: $font-size-s;
+
+        i {
+            font-size: $font-size-s;
+            cursor: pointer;
+        }
+
+        margin-top: 4rem;
+    }
+
+    .catalog__d {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+
+        margin-top: $margin-xsmall;
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            column-gap: $margin-xxsmall;
+
+            input {
+                width: 1rem;
+                height: 1rem;
+                border-radius: 1rem;
+                background: $color-light-gray;
+                appearance: none;
+                -webkit-border-radius: 1rem;
+                -moz-border-radius: 1rem;
+                -ms-border-radius: 1rem;
+                -o-border-radius: 1rem;
+
+                &:checked {
+                    background: $color-navy-blue;
+                }
+            }
+
+            label {
+                color: $color-navy-blue;
+                font-size: $font-size-m;
+                line-height: 150%;
+            }
+        }
+    }
+    .left-block{
+        margin-top: $margin-xsmall;
+
+        display: flex;
+        align-items: center;
+        column-gap: $margin-xxsmall;
+        .block{
+            width: 13.9rem;
+            height: 3.2rem;
+
+            color: $color-navy-blue;
+            font-size: $font-size-m;
+            font-variant-numeric: lining-nums proportional-nums; 
+        }
+    }
+    .left-block-2{
+        @include flex-row();
+        margin-top: $margin-xxsmall;
+    }
+    .table{
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        .table__element{
+            padding: 0.4rem 1rem;
+
+            border: 0.1rem solid $color-navy-blue;
+            font-variant-numeric: lining-nums proportional-nums; 
+            font-size: $font-size-m;
+            line-height: 150%;
+
+            cursor: pointer;
+
+            margin-top: $margin-xsmall;
+            &:nth-child(8), &:nth-child(9){
+                border: 0.1rem solid $color-burnt-orange;
+                color: $color-burnt-orange;
+            }
+        }
+    }
+}

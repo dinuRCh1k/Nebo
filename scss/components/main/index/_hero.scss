@@ -1,0 +1,264 @@
+@import '../../../cta';
+@import '../../../mixins';
+
+.hero {
+    margin-top: 7rem;
+
+    .hero__text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .xlarge-title {
+            margin-top: 12rem;
+        }
+
+        .hero__subticle {
+            margin-top: $margin-small;
+
+            text-align: center;
+
+            color: $color-navy-blue;
+            font-size: $font-size-m;
+            line-height: 150%;
+
+            max-width: 81.7rem;
+        }
+
+        a {
+            margin-top: 1.5rem;
+            color: $color-midnight-blue;
+            font-size: $font-size-m;
+            text-decoration-line: underline;
+            line-height: 150%;
+            transition: $transition-fast;
+            -webkit-transition: $transition-fast;
+            -moz-transition: $transition-fast;
+            -ms-transition: $transition-fast;
+            -o-transition: $transition-fast;
+
+            &:hover {
+                color: $color-navy-blue;
+            }
+
+            &:active {
+                @include click();
+            }
+        }
+    }
+
+    .line {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 0.8rem;
+
+        margin-top: 3.4rem;
+        position: relative;
+
+        .left,
+        .right {
+            width: 40vw;
+            height: 0.2rem;
+            background-color: #D9D8D8;
+        }
+    }
+
+    .hero__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 28.8rem);
+        grid-gap: 1.5rem;
+
+        margin-top: 4.5rem;
+
+        .grid-card {
+            padding: 1.5rem 1.5rem 7.9rem 1.5rem;
+
+            @include flex-column();
+
+            transition: $transition-fast;
+            -webkit-transition: $transition-fast;
+            -moz-transition: $transition-fast;
+            -ms-transition: $transition-fast;
+            -o-transition: $transition-fast;
+
+            &:hover {
+                transform: translateY(-1rem);
+                -webkit-transform: translateY(-1rem);
+                -moz-transform: translateY(-1rem);
+                -ms-transform: translateY(-1rem);
+                -o-transform: translateY(-1rem);
+            }
+
+            &:active {
+                transform: scale(0.95);
+                -webkit-transform: scale(0.95);
+                -moz-transform: scale(0.95);
+                -ms-transform: scale(0.95);
+                -o-transform: scale(0.95);
+            }
+
+            h2,
+            h3,
+            h4,
+            h5 {
+                color: $color-navy-blue;
+            }
+
+            h2 {
+                margin-top: $margin-xsmall;
+
+                font-size: $font-size-l;
+                font-weight: 500;
+                line-height: 140%;
+            }
+
+            h3 {
+                margin-top: $margin-xxsmall;
+
+                font-size: $font-size-m;
+                line-height: 150%;
+                text-align: center;
+            }
+
+            h4 {
+                margin-top: $margin-xsmall;
+
+                font-variant-numeric: lining-nums proportional-nums;
+                font-size: $font-size-l;
+                font-weight: 500;
+                line-height: 140%;
+            }
+
+            h5 {
+                color: $color-gray;
+                line-height: 150%;
+                font-size: $font-size-s;
+                font-variant-numeric: lining-nums proportional-nums;
+                text-decoration-line: line-through;
+            }
+        }
+    }
+
+    .large-title {
+        margin-top: 5.4rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero {
+        margin-top: $margin-xsmall;
+
+        .hero__text {
+            .hero__subticle {
+                margin-top: $margin-xsmall;
+            }
+        }
+
+        .line {
+            margin-top: 1.7rem;
+        }
+
+        .large-title {
+            margin-top: 3.9rem;
+        }
+
+        .hero__grid {
+            display: grid;
+            grid-template-columns: repeat(2, 15.4rem);
+            column-gap: 2rem;
+            row-gap: 4rem;
+
+            .grid-card {
+                padding: 0;
+
+                width: 15.4rem;
+
+                transform: translateY(0.1rem);
+                -webkit-transform: translateY(0.1rem);
+                -moz-transform: translateY(0.1rem);
+                -ms-transform: translateY(0.1rem);
+                -o-transform: translateY(0.1rem);
+
+                .new,
+                .pro {
+                    position: absolute;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 4rem;
+                    height: 2.2rem;
+                    padding: 0.2rem 0.4rem;
+                    gap: 0.4rem;
+
+                    border: 1px solid $color-gray;
+                    background: $color-white;
+
+                    color: $color-gray;
+                    font-size: $font-size-s;
+                    font-weight: 600;
+                    line-height: 150%;
+                    letter-spacing: 1.2px;
+                    text-transform: uppercase;
+
+                    font-variant-numeric: lining-nums proportional-nums;
+                }
+
+                .new {
+                    top: $margin-xxsmall;
+                    left: $margin-xxsmall;
+                }
+
+                .pro {
+                    top: 3.6rem;
+                    left: $margin-xxsmall;
+                }
+
+                .heart {
+                    display: block;
+                    position: absolute;
+                    width: 2.4rem;
+                    height: 2.4rem;
+                    top: $margin-xxsmall;
+                    right: $margin-xxsmall;
+                }
+
+                .arrow-right {
+                    display: block;
+                    position: absolute;
+                    right: $margin-xxsmall;
+                    top: 12rem;
+                    width: 2.4rem;
+                    height: 2.4rem;
+                }
+
+                img {
+                    width: 15.4rem;
+                }
+
+                h2 {
+                    font-size: $font-size-m;
+                }
+
+                h3 {
+                    margin-top: $margin-xxsmall;
+
+                    font-size: $font-size-s;
+
+                    max-width: 13.4rem;
+                }
+
+                h4 {
+                    font-size: 2rem;
+                }
+
+                .btn{
+                    display: flex;
+                    
+                    margin-top: $margin-xxsmall;
+                }
+            }
+        }
+    }
+}

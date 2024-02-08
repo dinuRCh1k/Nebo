@@ -1,0 +1,180 @@
+@import '../../cta';
+@import '../../mixins';
+
+.footer {
+    margin-top: 5.4rem;
+
+    .footer__top {
+        @include flex-column();
+
+        .bot {
+            margin-top: 6rem;
+
+            display: flex;
+            column-gap: $margin-small;
+
+            input {
+                padding: 1rem 23rem 1rem 2rem;
+
+                font-size: $font-size-m;
+                line-height: 150%;
+            }
+        }
+    }
+
+    .footer__row {
+        margin-top: 13rem;
+
+        .top {
+            background-color: $color-navy-blue;
+
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+
+            .container {
+                .content {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .footer__element {
+                        h2 {
+                            font-size: $font-size-s;
+                            color: $color-light-gray;
+                            font-weight: 800;
+                            line-height: 150%;
+                            letter-spacing: 1.2px;
+                            text-transform: uppercase;
+                        }
+
+                        ul {
+                            margin-top: $margin-small;
+
+                            display: flex;
+                            flex-direction: column;
+                            row-gap: $margin-xsmall;
+
+                            li {
+                                a {
+                                    color: $color-light-gray;
+                                    font-size: $font-size-m;
+                                    line-height: 150%;
+                                    transition: $transition-fast;
+                                    -webkit-transition: $transition-fast;
+                                    -moz-transition: $transition-fast;
+                                    -ms-transition: $transition-fast;
+                                    -o-transition: $transition-fast;
+
+                                    &:hover {
+                                        color: $color-burnt-orange;
+                                    }
+
+                                    &:active {
+                                        @include click();
+                                    }
+                                }
+                            }
+                        }
+
+                        &:last-child {
+                            ul {
+                                flex-direction: row;
+                                column-gap: 2rem;
+
+                                li {
+                                    a {
+                                        i {
+                                            font-size: $font-size-l;
+                                            transition: $transition-fast;
+                                            -webkit-transition: $transition-fast;
+                                            -moz-transition: $transition-fast;
+                                            -ms-transition: $transition-fast;
+                                            -o-transition: $transition-fast;
+
+                                            &:hover {
+                                                color: $color-burnt-orange;
+                                            }
+
+                                            &:active {
+                                                @include click();
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .bottom {
+            background-color: $color-midnight-blue;
+            padding: 2.8rem;
+            text-align: center;
+            color: $color-light-gray;
+            font-size: $font-size-m;
+            letter-spacing: 1.6px;
+            line-height: 150%;
+            text-transform: uppercase;
+            font-variant-numeric: lining-nums proportional-nums;
+            transition: $transition-fast;
+            -webkit-transition: $transition-fast;
+            -moz-transition: $transition-fast;
+            -ms-transition: $transition-fast;
+            -o-transition: $transition-fast;
+
+            &:hover {
+                color: $color-burnt-orange;
+            }
+
+            &:active{
+                color: $color-white;
+            }
+        }
+    }
+}
+@media (max-width: 360px) {
+    .footer{
+        .footer__top{
+            .large-title{
+                max-width: 32.8rem;
+            }
+            .bot{
+                flex-direction: column;
+
+                margin-left: 13rem;
+                margin-top: 4.5rem;
+                .btn{
+                    width: 32.8rem;
+                }
+                input{
+                    position: relative;
+                    right: 1rem;
+
+                    margin-bottom: $margin-xxsmall;
+                }
+            }
+        }
+        .footer__row{
+            margin-top: 9rem;
+            .top{
+                .container{
+                    .content{
+                        flex-direction: column;
+                        align-items: center;
+                        text-align: center;
+                        row-gap: 4.5rem;
+                        .footer__element{
+                            &:last-child{
+                                margin-top: 4.5rem;
+                                h2{
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

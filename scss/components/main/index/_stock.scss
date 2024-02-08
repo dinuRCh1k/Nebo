@@ -1,0 +1,145 @@
+@import '../../../cta';
+@import '../../../mixins';
+
+.stock {
+    margin-top: $margin-small;
+
+    .large-title{
+        margin-bottom: 6rem;
+    }
+
+    .stock__slider {
+        @include flex-row(align);
+        column-gap: $margin-small;
+
+        .slider-block {
+            position: relative;
+
+            background-color: $color-navy-blue;
+
+            height: 48rem;
+
+            &:nth-child(1) {
+                img {
+                    margin-top: 7.6rem;
+                    margin-right: 7.6rem;
+                }
+            }
+
+            &:nth-child(2) {
+                @include flex-row(align);
+                column-gap: 7.6rem;
+
+                width: 100rem;
+
+                img {
+                    width: 56rem;
+                    height: 32.8rem;
+                }
+
+                .slider-left {
+                    @include flex-column();
+                    margin-left: $margin-xsmall;
+
+                    .slider__subticle {
+                        margin-top: $margin-small;
+                        margin-bottom: $margin-small;
+
+                        color: $color-light-gray;
+                        font-size: $font-size-m;
+                        line-height: 150%;
+
+                        text-align: center;
+                    }
+                }
+            }
+
+            &:nth-child(3) {
+                position: absolute;
+                left: 139rem;
+
+                .slider-left {
+                    @include flex-column();
+                    margin-top: 12.2rem;
+                    margin-left: 7.6rem;
+
+                    .slider__subticle {
+                        margin-top: $margin-small;
+                        margin-bottom: $margin-small;
+
+                        color: $color-light-gray;
+                        font-size: $font-size-m;
+                        line-height: 150%;
+
+                        text-align: center;
+                    }
+                }
+            }
+
+            .restangle {
+                position: absolute;
+                right: 0;
+                top: 0;
+
+                width: 15.2rem;
+                height: 48rem;
+                background-color: $color-midnight-blue;
+            }
+
+            img {
+                position: relative;
+                z-index: 2;
+
+                object-fit: cover;
+            }
+
+            .xlarge-title {
+                color: $color-light-gray;
+            }
+        }
+    }
+
+    .dots{
+        margin-top: $margin-xsmall;
+
+        width: 10rem;
+        margin-left: auto;
+        margin-right: auto;
+
+        img{
+            cursor: pointer;
+        }
+    }
+}
+@media (max-width: 360px) {
+    .stock{
+        margin-left: 1.6rem;
+        margin-right: 1.6rem;
+        .stock__slider{
+            .slider-block{
+                display: none;
+                padding: 4rem 2rem;
+                &:nth-child(2){
+                    display: block;
+                    height: 68.8rem;
+                    .restangle{
+                        top: 60.8rem;
+                        width: 32.8rem;
+                        height: 8rem;
+                        left: 0;
+                    }
+                    img{
+                        width: 24.8rem;
+                        height: 24.8rem;
+
+                        margin-left: $margin-xsmall;
+                        margin-top: $margin-regular;
+                    }
+                    .btn{
+                        width: 19.4rem;
+                    }
+                }
+            }
+        }
+    }
+}

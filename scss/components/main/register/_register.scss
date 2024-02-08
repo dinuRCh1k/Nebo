@@ -1,0 +1,183 @@
+@import '../../../cta';
+@import '../../../mixins';
+
+.register {
+    margin-top: $margin-large;
+
+    @include respond-to('phone') {
+        margin-top: 6rem;
+    }
+
+    .register__content {
+        width: 39.4rem;
+        margin: 0 auto;
+
+        @include respond-to('phone') {
+            width: 32.8rem;
+            margin: 0 auto;
+        }
+
+        // .login__title {
+        //     text-align: left;
+
+        //     @include flex-row();
+
+        //     color: $color-midnight-blue;
+        // }
+
+        .form {
+            margin-top: 6rem;
+
+            position: relative;
+
+            label {
+                display: block;
+
+                color: $color-midnight-blue;
+                font-size: $font-size-s;
+                line-height: 150%;
+
+                margin-bottom: $margin-xxsmall;
+            }
+
+            input {
+                padding: 1rem 10.3rem 1rem 1.8rem;
+
+                color: $color-gray;
+                font-size: $font-size-m;
+                line-height: 150%;
+
+                width: 394px;
+                height: 44px;
+                flex-shrink: 0;
+
+                background: $color-light-gray;
+
+                margin-bottom: $margin-xsmall;
+            }
+
+            img {
+                position: absolute;
+                right: 0;
+
+                cursor: pointer;
+
+                @include respond-to('phone') {
+                    top: 12.1rem;
+                }
+            }
+
+            .form__top {
+                display: flex;
+                align-items: flex-start;
+                column-gap: 1rem;
+    
+    
+                label {
+                    color: $color-navy-blue;
+                    font-size: $font-size-s;
+                    line-height: 150%;
+                }
+    
+                input {
+                    width: 1.6rem;
+                    height: 1.6rem;
+    
+                    background: $color-light-gray;
+    
+                    &:checked {
+                        background: $color-light-gray;
+                        appearance: auto;
+                    }
+                }
+    
+    
+                a {
+                    color: $color-midnight-blue;
+                    font-size: $font-size-s;
+                    line-height: 150%;
+                }
+            }
+        }
+
+        .btn {
+            margin-top: 3rem;
+            margin-bottom: 6rem;
+
+            width: 100%;
+        }
+
+        .line_2 {
+            text-align: center;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            color: $color-gray;
+            font-size: $font-size-s;
+            font-weight: 800;
+            line-height: 150%;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+
+            .left,
+            .right {
+                width: 40%;
+                height: 0.2rem;
+
+                background: $color-gray;
+            }
+        }
+
+        .button__google {
+            margin-top: 7rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .top {
+            display: flex;
+            align-items: center;
+            column-gap: 1rem;
+            margin: 2rem auto;
+            width: 33rem;
+
+            p,
+            a {
+                font-size: $font-size-m;
+                line-height: 150%;
+            }
+
+            p {
+                color: $color-navy-blue;
+            }
+
+            a {
+                color: $color-midnight-blue;
+                transition: $transition-fast;
+                -webkit-transition: $transition-fast;
+                -moz-transition: $transition-fast;
+                -ms-transition: $transition-fast;
+                -o-transition: $transition-fast;
+
+                &:hover {
+                    color: $color-burnt-orange;
+                }
+
+                &:active {
+                    @include click();
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    .login {
+        .login__content {
+            .login__form {
+                margin-top: 4.5rem;
+            }
+        }
+    }
+}

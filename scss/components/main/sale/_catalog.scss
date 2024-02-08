@@ -1,0 +1,289 @@
+@import '../../../cta';
+@import '../../../mixins';
+
+.catalog {
+    margin-top: 4.5rem;
+
+    .catalog__top {
+        display: flex;
+        column-gap: $margin-xxsmall;
+
+        margin-left: 31.8rem;
+
+        @include respond-to('phone') {
+            display: none;
+        }
+
+        .but {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.2rem;
+            height: 3.2rem;
+            padding: 0.9rem 2rem;
+            border: 0.2rem solid $color-gray;
+            color: $color-gray;
+            font-size: $font-size-s;
+            line-height: 150%;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            transition: $transition-fast;
+            -webkit-transition: $transition-fast;
+            -moz-transition: $transition-fast;
+            -ms-transition: $transition-fast;
+            -o-transition: $transition-fast;
+
+            &:nth-child(1) {
+                border: 0.2rem solid $color-burnt-orange;
+                color: $color-burnt-orange;
+            }
+
+            &:hover {
+                border: 0.2rem solid $color-burnt-orange;
+                color: $color-burnt-orange;
+            }
+
+            &:active {
+                @include click();
+            }
+        }
+    }
+
+    .catalog__row {
+        margin-left: 30.3rem;
+
+        @include respond-to('phone') {
+            margin-left: 0;
+        }
+
+        .catalog__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 31.8rem);
+            grid-gap: 1.5rem;
+
+            margin-top: 4.5rem;
+
+            .grid-card {
+                padding: 1.5rem 1.5rem 7.9rem 1.5rem;
+
+                @include flex-column();
+
+                transition: $transition-fast;
+                -webkit-transition: $transition-fast;
+                -moz-transition: $transition-fast;
+                -ms-transition: $transition-fast;
+                -o-transition: $transition-fast;
+
+                &:hover {
+                    transform: translateY(-1rem);
+                    -webkit-transform: translateY(-1rem);
+                    -moz-transform: translateY(-1rem);
+                    -ms-transform: translateY(-1rem);
+                    -o-transform: translateY(-1rem);
+                }
+
+                &:active {
+                    transform: scale(0.95);
+                    -webkit-transform: scale(0.95);
+                    -moz-transform: scale(0.95);
+                    -ms-transform: scale(0.95);
+                    -o-transform: scale(0.95);
+                }
+
+                h2,
+                h3,
+                h4,
+                h5 {
+                    color: $color-navy-blue;
+                }
+
+                h2 {
+                    margin-top: $margin-xsmall;
+
+                    font-size: $font-size-l;
+                    font-weight: 500;
+                    line-height: 140%;
+                }
+
+                h3 {
+                    margin-top: $margin-xxsmall;
+
+                    font-size: $font-size-m;
+                    line-height: 150%;
+                    text-align: center;
+                }
+
+                h4 {
+                    margin-top: $margin-xsmall;
+
+                    font-variant-numeric: lining-nums proportional-nums;
+                    font-size: $font-size-l;
+                    font-weight: 500;
+                    line-height: 140%;
+                }
+
+                h5 {
+                    color: $color-gray;
+                    line-height: 150%;
+                    font-size: $font-size-s;
+                    font-variant-numeric: lining-nums proportional-nums;
+                    text-decoration-line: line-through;
+                }
+            }
+        }
+    }
+
+    .button {
+        padding: 1.4rem 2.4rem;
+
+        text-align: center;
+
+        color: $color-burnt-orange;
+        font-size: $font-size-s;
+        font-weight: 800;
+        line-height: 150%;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+
+        width: $container-width;
+        height: 4.4rem;
+        gap: 1rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border: 0.2rem solid $color-burnt-orange;
+
+        @include respond-to('phone'){
+            width: 32.8rem;
+            margin-top: 9rem;
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    .catalog {
+        .catalog__row {
+            .catalog__grid {
+                display: grid;
+                grid-template-columns: repeat(2, 15.4rem);
+                column-gap: 2rem;
+                row-gap: 4rem;
+
+                .grid-card {
+                    padding: 0;
+
+                    width: 15.4rem;
+
+                    transform: translateY(0.1rem);
+                    -webkit-transform: translateY(0.1rem);
+                    -moz-transform: translateY(0.1rem);
+                    -ms-transform: translateY(0.1rem);
+                    -o-transform: translateY(0.1rem);
+
+                    display: none;
+
+                    &:nth-child(1),
+                    &:nth-child(2),
+                    &:nth-child(3),
+                    &:nth-child(4),
+                    &:nth-child(5),
+                    &:nth-child(6),
+                    &:nth-child(7),
+                    &:nth-child(8) {
+                        @include flex-column();
+                    }
+
+                    .none {
+                        display: block;
+
+                        margin-top: $margin-xxsmall;
+
+                        font-size: $font-size-s;
+
+                        max-width: 13.4rem;
+
+                        line-height: 150%;
+                        text-align: center;
+                    }
+
+                    h3 {
+                        display: none;
+                    }
+
+                    .new,
+                    .pro {
+                        position: absolute;
+
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 4rem;
+                        height: 2.2rem;
+                        padding: 0.2rem 0.4rem;
+                        gap: 0.4rem;
+
+                        border: 1px solid $color-gray;
+                        background: $color-white;
+
+                        color: $color-gray;
+                        font-size: $font-size-s;
+                        font-weight: 600;
+                        line-height: 150%;
+                        letter-spacing: 1.2px;
+                        text-transform: uppercase;
+
+                        font-variant-numeric: lining-nums proportional-nums;
+                    }
+
+                    .new {
+                        top: $margin-xxsmall;
+                        left: $margin-xxsmall;
+                    }
+
+                    .pro {
+                        top: 3.6rem;
+                        left: $margin-xxsmall;
+                    }
+
+                    .heart {
+                        display: block;
+                        position: absolute;
+                        width: 2.4rem;
+                        height: 2.4rem;
+                        top: $margin-xxsmall;
+                        right: $margin-xxsmall;
+                    }
+
+                    .arrow-right {
+                        display: block;
+                        position: absolute;
+                        right: $margin-xxsmall;
+                        top: 12rem;
+                        width: 2.4rem;
+                        height: 2.4rem;
+                    }
+
+                    img {
+                        width: 15.4rem;
+                    }
+
+                    h2 {
+                        font-size: $font-size-m;
+                    }
+
+                    h4 {
+                        font-size: 2rem;
+                    }
+
+                    .btn {
+                        display: flex;
+
+                        margin-top: $margin-xxsmall;
+                    }
+                }
+            }
+        }
+    }
+}

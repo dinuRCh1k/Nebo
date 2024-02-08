@@ -1,0 +1,260 @@
+@import '../../../cta';
+@import '../../../mixins';
+
+.header {
+    background: $color-navy-blue;
+
+    height: 74.2rem;
+
+    .container {
+        width: $container-width;
+        margin: 0 auto;
+        .header__top {
+            .nav {
+                @include flex-row();
+                padding-top: 6rem;
+
+                .nav-list-1 {
+                    display: flex;
+                    align-items: center;
+                    column-gap: $margin-xsmall;
+
+                    .nav-link {
+                        a {
+                            color: $color-light-gray;
+                            font-size: $font-size-m;
+                            display: flex;
+                            align-items: center;
+                            transition: $transition-fast;
+                            -webkit-transition: $transition-fast;
+                            -moz-transition: $transition-fast;
+                            -ms-transition: $transition-fast;
+                            -o-transition: $transition-fast;
+                            position: relative;
+
+                            &:hover {
+                                color: $color-coral;
+                                transform: translateY(-0.1rem);
+                                -webkit-transform: translateY(-0.1rem);
+                                -moz-transform: translateY(-0.1rem);
+                                -ms-transform: translateY(-0.1rem);
+                                -o-transform: translateY(-0.1rem)
+                            }
+
+                            &:active {
+                                top: 0.1rem;
+                            }
+
+                            i {
+                                font-size: $font-size-s;
+                            }
+                        }
+
+                        &:nth-child(1) {
+                            a {
+                                column-gap: $margin-xxsmall;
+                            }
+                        }
+
+                        &:nth-child(2) {
+                            a {
+                                column-gap: $margin-xsmall;
+                            }
+                        }
+                    }
+                }
+
+                .nav-list-2 {
+                    display: flex;
+                    column-gap: $margin-xsmall;
+
+                    .nav-link {
+                        a {
+                            color: $color-light-gray;
+                            font-size: $font-size-m;
+
+                            display: flex;
+                            align-items: center;
+
+                            transition: $transition-fast;
+                            -webkit-transition: $transition-fast;
+                            -moz-transition: $transition-fast;
+                            -ms-transition: $transition-fast;
+                            -o-transition: $transition-fast;
+
+                            position: relative;
+
+                            &:hover {
+                                color: $color-coral;
+                                transform: translateY(-0.1rem);
+                                -webkit-transform: translateY(-0.1rem);
+                                -moz-transform: translateY(-0.1rem);
+                                -ms-transform: translateY(-0.1rem);
+                                -o-transform: translateY(-0.1rem)
+                            }
+
+                            &:active {
+                                top: 0.1rem;
+                            }
+                        }
+
+                        &:nth-child(1) {
+                            a {
+                                column-gap: $margin-xxsmall;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .header__bottom {
+            margin-top: 6rem;
+
+            .nav-2 {
+                .nav-list {
+                    display: flex;
+                    column-gap: $margin-xsmall;
+
+                    .nav-link {
+                        a {
+                            color: $color-white;
+                            font-size: $font-size-s;
+                            font-weight: 800;
+                            letter-spacing: 1.2px;
+                            text-transform: uppercase;
+                            transition: $transition-fast;
+                            -webkit-transition: $transition-fast;
+                            -moz-transition: $transition-fast;
+                            -ms-transition: $transition-fast;
+                            -o-transition: $transition-fast;
+
+                            &:hover {
+                                color: $color-coral;
+                            }
+
+                            &:active {
+                                @include click();
+                            }
+                        }
+                    }
+                }
+            }
+
+            img {
+                margin-top: $margin-xsmall;
+            }
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    .header {
+        height: 26.8rem;
+
+        .container {
+            .header__top {
+                .nav {
+                    .nav-list-1 {
+                        li {
+                            display: none;
+
+                            &:last-child {
+                                display: block;
+                            }
+                        }
+                    }
+
+                    .nav-list-2 {
+                        li {
+                            display: none;
+
+                            &:last-child {
+                                display: block;
+                            }
+                        }
+                    }
+
+                    .logo {
+                        img {
+                            width: 11.2rem;
+                            height: 3rem;
+                            
+                            position: relative;
+                            left: 2rem;
+                        }
+                    }
+
+                    .last {
+                        display: block;
+
+                        .mobile__menu {
+                            display: none;
+                        }
+
+                        .hamburger-chek {
+                            display: none;
+
+                            &:checked ~ .mobile__menu{
+                                display: block;
+                                width: 100vw;
+                                height: 100vh;
+                                position: absolute;
+                                right: 0;
+                                top: 0;
+                                background-color: $color-navy-blue;
+                                animation: anim .3s;
+                                -webkit-animation: anim .3s;
+                            }
+                        }
+
+                        .hamburger {
+                            display: flex;
+                            flex-direction: column;
+                            row-gap: 1rem;
+                            position: relative;
+                            z-index: 10;
+                            width: 3.4rem;
+                            right: 2rem;
+
+                            .line {
+                                width: 100%;
+                                height: 0.2rem;
+                                background-color: $color-light-gray;
+
+                                &:nth-child(2) {
+                                    width: 70%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .header__bottom {
+                margin-top: $margin-xsmall;
+                .nav-2{
+                    display: none;
+                }
+                img{
+                    margin-top: 0;
+                    
+                    width: 32.8rem;
+                    height: 25.3rem;
+
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}
+
+@keyframes anim {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
